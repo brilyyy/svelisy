@@ -12,7 +12,7 @@
 
 [![][banner-url]][docs-url]
 
-# daisyUI 2.0
+# Svelisy - 🌻 Svelte daisyUI
 
 [![][build]][build-url] [![][npm]][npm-url] [![][number-of-components]][docs-url] [![][license]][license-url]  
 [![][dl]][npm-url] [![][stars]][gh-url] [![][commit]][gh-url]
