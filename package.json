@@ -1,6 +1,6 @@
 {
 	"name": "svelisy",
-	"version": "0.0.1",
+	"version": "0.0.1-beta",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
@@ -11,7 +11,8 @@
 		"format": "prettier --plugin-search-dir . --write .",
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
-		"story:preview": "histoire preview"
+		"story:preview": "histoire preview",
+		"publish": "pnpm build && npm publish ./package"
 	},
 	"devDependencies": {
 		"@histoire/plugin-svelte": "^0.12.4",
