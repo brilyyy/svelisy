@@ -9,8 +9,6 @@
 	import Range from './Range.svelte';
 	import Select from './Select.svelte';
 	import Textarea from './Textarea.svelte';
-	import Rating from './Rating.svelte';
-	import RatingItem from './RatingItem.svelte';
 
 	export let Hst: Hst;
 
@@ -46,7 +44,7 @@
 
 <Hst.Story group="components">
 	<Hst.Variant title="text">
-		<Input bind:value={textValue} placeholder="input" class="w-full mb-3" {dataTheme} />
+		<Input type="text" bind:value={textValue} placeholder="input" class="w-full mb-3" {dataTheme} />
 
 		<p>Input value: {textValue}</p>
 	</Hst.Variant>
@@ -123,23 +121,6 @@
 		<Textarea bind:value={textAreaValue} />
 
 		<p>Input value: {textAreaValue}</p>
-	</Hst.Variant>
-
-	<Hst.Variant title="rating">
-		<Rating bind:value={ratingValue} size="lg" half>
-			{#each [...Array(10)] as _, i}
-				<RatingItem
-					name="rating-10"
-					class="mask mask-star-2 mask-half-2 bg-green-500"
-					on:change={() => {
-						ratingValue = i + 1;
-					}}
-					checked={ratingValue === i + 1}
-				/>
-			{/each}
-		</Rating>
-
-		<p>Input value: {ratingValue}</p>
 	</Hst.Variant>
 
 	<svelte:fragment slot="controls">

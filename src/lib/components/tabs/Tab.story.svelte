@@ -2,8 +2,7 @@
 	import type { DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Tab from './Tab.svelte';
-	import Tabs from './Tabs.svelte';
+	import { Tabs } from '$lib';
 	export let Hst: Hst;
 
 	type TDataThemeOptions = {
@@ -19,16 +18,15 @@
 	});
 
 	let dataTheme: DataTheme = 'dark';
-	let tabIndex: string;
 </script>
 
 <Hst.Story group="components">
 	<Hst.Variant title="default">
 		<div class="flex w-full justify-center" data-theme={dataTheme}>
-			<Tabs {dataTheme} bind:value={tabIndex} variant="lifted" size="lg">
-				<Tab eventKey="0">1sfd</Tab>
-				<Tab eventKey="1">2sdf</Tab>
-				<Tab eventKey="2">ffs3</Tab>
+			<Tabs {dataTheme} variant="lifted" size="lg">
+				<Tabs.Tab eventKey="0">xxx</Tabs.Tab>
+				<Tabs.Tab eventKey="1">yyy</Tabs.Tab>
+				<Tabs.Tab eventKey="2">zzz</Tabs.Tab>
 			</Tabs>
 		</div>
 

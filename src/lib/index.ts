@@ -23,3 +23,4 @@ export { default as Tooltip } from './components/tooltip';
 export { default as Toast } from './components/toast';
 export { default as WindowMockup } from './components/window-mockup';
 export { default as Code } from './components/code-mockup';
+export { default as Tabs } from './components/tabs';

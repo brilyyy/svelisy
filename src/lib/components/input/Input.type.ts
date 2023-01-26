@@ -47,13 +47,3 @@ export type TTextAreaProps = Omit<HTMLTextareaAttributes, 'color'> &
 		borderOffset?: boolean;
 		color?: ComponentColor;
 	};
-
-export type TRatingItemProps = HTMLInputAttributes;
-
-export type TRatingProps = HTMLAttributes<HTMLDivElement> &
-	IComponentBaseProps & {
-		size?: ComponentSize;
-		half?: boolean;
-		hidden?: boolean;
-		value: number;
-	};

@@ -1,75 +1,98 @@
 <script lang="ts" context="module">
 	import type { ComponentSize, IComponentBaseProps } from '$lib/types';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import clsx from 'clsx';
-	import { twMerge } from 'tailwind-merge';
-	import { writable, type Writable } from 'svelte/store';
-	import { setContext, onDestroy } from 'svelte';
-	import { nanoid } from 'nanoid';
 
 	export type TTabsProps = HTMLAttributes<HTMLDivElement> &
 		IComponentBaseProps & {
-			value?: string;
 			variant?: 'bordered' | 'lifted';
 			size?: ComponentSize;
 			boxed?: boolean;
+			active?: number;
+			initialTab?: number;
 		};
 
-	export const TABS_CONTEXT_ID = `svelisy-tabs-${nanoid(9)}`;
-	export type TTabContext = {
-		registerTab: (tab: any) => void;
-		selectTab: (tab: any) => void;
-		selectedTab: Writable<string>;
+	export type TTabContext = Writable<{
+		active?: number;
 		variant?: 'bordered' | 'lifted';
 		size?: ComponentSize;
-	};
+	}>;
+	export const TABS_CONTEXT = `svelisy-tabs`;
 </script>
 
 <script lang="ts">
+	import clsx from 'clsx';
+	import { twMerge } from 'tailwind-merge';
+	import { writable, type Writable } from 'svelte/store';
+	import { setContext, onDestroy, onMount, createEventDispatcher } from 'svelte';
+
 	type $$Props = TTabsProps;
 
+	export let className: $$Props['className'] = undefined;
 	export let dataTheme: $$Props['dataTheme'] = undefined;
-	export let value: $$Props['value'] = undefined;
+	export let active: $$Props['active'] = -1;
 	export let variant: $$Props['variant'] = undefined;
 	export let size: $$Props['size'] = undefined;
 	export let boxed: $$Props['boxed'] = undefined;
+	export let initialTab: $$Props['initialTab'] = 0;
 
-	const tabs: any[] = [];
-	const selectedTab = writable<string>(value);
+	export { className as class };
 
-	setContext<TTabContext>(TABS_CONTEXT_ID, {
-		registerTab: (tab: any) => {
-			tabs.push(tab);
-			selectedTab.update((current) => current || tabs.indexOf(tab).toString());
+	let element: HTMLDivElement;
+	let tabNodes: Element[];
 
-			onDestroy(() => {
-				const i = tabs.indexOf(tab);
-				tabs.splice(i, 1);
-				selectedTab.update((current) =>
-					current === tab ? tabs[i] || tabs[tabs.length - 1] : current
-				);
-			});
-		},
-		selectTab: (tab: any) => {
-			const i = tabs.indexOf(tab).toString();
-			selectedTab.set(i);
-		},
-		selectedTab,
-		variant,
-		size
+	const dispatch = createEventDispatcher();
+
+	// initialize reactive content
+	// thanks to svelteui source code
+	const contextStore = writable({
+		active: active === -1 ? initialTab : active,
+		variant: variant,
+		size: size
 	});
 
+	setContext<TTabContext>(TABS_CONTEXT, contextStore);
+
+	$: $contextStore = {
+		active: _active,
+		variant: variant,
+		size: size
+	};
+
+	// Getting all tabs button
+	function setupTabs() {
+		const tabs = element.querySelectorAll('.svelisy-tab');
+		for (let [index, tab] of Array.from(tabs).entries()) {
+			const key = tab.getAttribute('data-svelisy-tab-key');
+			tab.addEventListener('click', () => onTabClick(index, key!));
+		}
+	}
+
+	function onTabClick(index: number, key: string) {
+		dispatch('change', { index: index, key: key });
+		_active = index;
+		contextStore.set({ ...$contextStore, active: index });
+	}
+
+	function calculateActive() {
+		if (!element) return;
+	}
+
+	onMount(() => {
+		setupTabs();
+		calculateActive();
+	});
+
+	$: _active = active === -1 ? initialTab : active;
+	$: $contextStore, _active, calculateActive();
 	$: classes = twMerge(
 		'tabs',
-		$$props.class,
+		className,
 		clsx({
 			'tabs-boxed': boxed
 		})
 	);
-
-	$: value = $selectedTab;
 </script>
 
-<div id={TABS_CONTEXT_ID} role="tablist" {...$$restProps} data-theme={dataTheme} class={classes}>
+<div bind:this={element} role="tablist" {...$$restProps} data-theme={dataTheme} class={classes}>
 	<slot />
 </div>
