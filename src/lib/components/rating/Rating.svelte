@@ -48,8 +48,12 @@
 
 	function onStarClick(item: HTMLInputElement) {
 		const itemValue = parseInt(item.getAttribute('data-svelisy-rating')!);
-		contextStore.set({ ...$contextStore, value: itemValue });
-		value = itemValue;
+		if ($contextStore.value === itemValue && hidden) {
+			contextStore.set({ ...$contextStore, value: 0 });
+		} else {
+			contextStore.set({ ...$contextStore, value: itemValue });
+			value = itemValue;
+		}
 	}
 
 	$: classes = twMerge(
@@ -62,11 +66,13 @@
 		})
 	);
 
+	$: isZeroValue = $contextStore.value === 0;
+
 	$: $contextStore;
 </script>
 
 <div bind:this={ratingEl} aria-label="Rating" data-theme={dataTheme} class={classes}>
-	{#if $contextStore.value === 0}
+	{#if isZeroValue}
 		<input type="checkbox" class={clsx(classes, 'hidden')} checked readonly />
 	{/if}
 	<slot />
