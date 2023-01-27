@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TProps as $$TProps } from './PhoneMockup.type';
 	//
-	type $$Props = $$TProps
+	type $$Props = $$TProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

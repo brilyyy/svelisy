@@ -6,7 +6,7 @@
 	import { createEventForwarder } from '$lib/utils';
 	import { get_current_component } from 'svelte/internal';
 	//
-	type $$Props = $$TProps
+	type $$Props = $$TProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

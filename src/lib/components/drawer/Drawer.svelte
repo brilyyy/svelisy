@@ -4,7 +4,7 @@
 	import type { TProps as $$TProps } from './Drawer.type';
 	import { createEventDispatcher } from 'svelte';
 
-	type $$Props = $$TProps
+	type $$Props = $$TProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

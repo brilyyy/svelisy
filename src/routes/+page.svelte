@@ -1,17 +1,38 @@
 <script lang="ts">
-	import { Rating } from '$lib';
-
-	let value: number = 1;
-
-	$: {
-		console.log(value);
-	}
+	import { Table } from '$lib';
 </script>
 
-<Rating bind:value>
-	<Rating.Item class="mask mask-heart bg-red-400" />
-	<Rating.Item class="mask mask-heart bg-orange-400" />
-	<Rating.Item class="mask mask-heart bg-yellow-400" />
-	<Rating.Item class="mask mask-heart bg-lime-400" />
-	<Rating.Item class="mask mask-heart bg-green-400" />
-</Rating>
+<Table compact>
+	<!-- head -->
+	<thead>
+		<Table.Row>
+			<th />
+			<th>Name</th>
+			<th>Job</th>
+			<th>Favorite Color</th>
+		</Table.Row>
+	</thead>
+	<tbody>
+		<!-- row 1 -->
+		<Table.Row hover>
+			<th>1</th>
+			<td>Cy Ganderton</td>
+			<td>Quality Control Specialist</td>
+			<td>Blue</td>
+		</Table.Row>
+		<!-- row 2 -->
+		<Table.Row>
+			<th>2</th>
+			<td>Hart Hagerty</td>
+			<td>Desktop Support Technician</td>
+			<td>Purple</td>
+		</Table.Row>
+		<!-- row 3 -->
+		<Table.Row>
+			<th>3</th>
+			<td>Brice Swyre</td>
+			<td>Tax Accountant</td>
+			<td>Red</td>
+		</Table.Row>
+	</tbody>
+</Table>

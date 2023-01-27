@@ -2,7 +2,7 @@
 	import clsx from 'clsx';
 	import type { TGroupProps as $$AvatarGroupProps } from './Avatar.type';
 
-	type $$Props = $$AvatarGroupProps
+	type $$Props = $$AvatarGroupProps;
 
 	export let className: $$Props['className'] = '';
 	export let space: $$Props['space'] = undefined;

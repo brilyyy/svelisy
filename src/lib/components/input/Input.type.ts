@@ -1,8 +1,6 @@
 import type { ComponentColor, ComponentSize, IComponentBaseProps } from '$lib/types';
 import type {
-	HTMLAttributes,
 	HTMLInputAttributes,
-	HTMLInputTypeAttribute,
 	HTMLSelectAttributes,
 	HTMLTextareaAttributes
 } from 'svelte/elements';

@@ -1,15 +1,26 @@
+<script context="module" lang="ts">
+	export type TCheckboxProps = Omit<HTMLInputAttributes, 'size' | 'color'> &
+		IComponentBaseProps & {
+			bordered?: boolean;
+			borderOffset?: boolean;
+			size?: ComponentSize;
+			color?: ComponentColor;
+		} & {
+			indeterminate?: boolean;
+			value?: string | number;
+			group?: (string | number)[];
+			noStyle?: boolean;
+		};
+</script>
+
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
-	import type { TInputProps as $$TProps } from './Input.type';
 	import { onMount } from 'svelte';
+	import type { HTMLInputAttributes } from 'svelte/elements';
+	import type { ComponentColor, ComponentSize, IComponentBaseProps } from '$lib/types';
 	//
-	interface $$Props extends $$TProps {
-		indeterminate?: boolean;
-		value?: string | number;
-		group?: (string | number)[];
-		noStyle?: boolean;
-	}
+	type $$Props = TCheckboxProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

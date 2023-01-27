@@ -1,11 +1,40 @@
+<script lang="ts" context="module">
+	export type TInputType =
+		| 'color'
+		| 'date'
+		| 'datetime-local'
+		| 'email'
+		| 'hidden'
+		| 'image'
+		| 'month'
+		| 'number'
+		| 'password'
+		| 'reset'
+		| 'tel'
+		| 'text'
+		| 'time'
+		| 'url'
+		| 'week'
+		| 'search';
+
+	export type TInputProps = Omit<HTMLInputAttributes, 'size' | 'color'> &
+		IComponentBaseProps & {
+			bordered?: boolean;
+			borderOffset?: boolean;
+			size?: ComponentSize;
+			color?: ComponentColor;
+		};
+</script>
+
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
-	import type { InputType, TInputProps as $$TProps } from './Input.type';
+	import type { ComponentColor, ComponentSize, IComponentBaseProps } from '$lib/types';
+	import type { HTMLInputAttributes } from 'svelte/elements';
 	//
-	interface $$Props extends $$TProps {
-		type: InputType;
-	}
+	type $$Props = TInputProps & {
+		type: TInputType;
+	};
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

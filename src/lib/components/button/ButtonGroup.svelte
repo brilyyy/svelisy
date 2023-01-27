@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TGroupProps as $$TGroupProps } from './Button.type';
 
-	type $$Props = $$TGroupProps
+	type $$Props = $$TGroupProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

@@ -5,7 +5,7 @@
 	import { get_current_component } from 'svelte/internal';
 	import type { TProps as $$ButtonProps } from './Button.type';
 
-	type $$Props = $$ButtonProps
+	type $$Props = $$ButtonProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TItemProps as $$TItemProps } from './Breadcrumbs.type';
 
-	type $$Props = $$TItemProps
+	type $$Props = $$TItemProps;
 
 	export let href: $$Props['href'] = 'undefined';
 </script>

@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TProps as $$AvatarProps } from './Avatar.type';
 
-	type $$Props = $$AvatarProps
+	type $$Props = $$AvatarProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

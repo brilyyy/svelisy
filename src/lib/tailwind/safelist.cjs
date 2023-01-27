@@ -1,7 +1,7 @@
 module.exports = [
 	{
 		pattern:
-			/(alert|btn|rounded|ring|mask|avatar|badge|countdown|indicator|kbd|link|progress|tooltip|step|input|checkbox|toggle|rating|card|tab|chat)-./
+			/(alert|btn|rounded|ring|mask|avatar|badge|countdown|indicator|kbd|link|progress|tooltip|step|input|checkbox|toggle|rating|card|tab|chat|table|stat|stats)-./
 	},
 	// border color
 	'border-primary',

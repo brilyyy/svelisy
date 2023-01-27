@@ -1,7 +1,19 @@
+<script lang="ts" context="module">
+	export type TSelectProps = Omit<HTMLSelectAttributes, 'size' | 'color'> &
+		IComponentBaseProps & {
+			bordered?: boolean;
+			borderOffset?: boolean;
+			size?: ComponentSize;
+			color?: ComponentColor;
+		};
+</script>
+
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
 	import type { TSelectProps as $$TProps } from './Input.type';
+	import type { HTMLSelectAttributes } from 'svelte/elements';
+	import type { ComponentColor, ComponentSize, IComponentBaseProps } from '$lib/types';
 
 	interface $$Props extends $$TProps {
 		options: { label: string; value: any }[];

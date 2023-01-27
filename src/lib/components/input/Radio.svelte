@@ -1,12 +1,21 @@
+<script context="module" lang="ts">
+	export type TRadioProps = Omit<HTMLInputAttributes, 'size' | 'color'> &
+		IComponentBaseProps & {
+			bordered?: boolean;
+			borderOffset?: boolean;
+			size?: ComponentSize;
+			color?: ComponentColor;
+			group?: number | string;
+		};
+</script>
+
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
-	import type { InputType, TInputProps as $$TProps } from './Input.type';
+	import type { ComponentColor, ComponentSize, IComponentBaseProps } from '$lib/types';
+	import type { HTMLInputAttributes } from 'svelte/elements';
 	//
-	interface $$Props extends $$TProps {
-		type?: InputType;
-		group?: number | string;
-	}
+	type $$Props = TRadioProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

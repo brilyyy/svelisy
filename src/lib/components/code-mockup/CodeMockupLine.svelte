@@ -2,7 +2,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
 	import type { TLineProps as $$TProps } from './CodeMockup.type';
-	type $$Props = $$TProps
+	type $$Props = $$TProps;
 
 	export let className: $$Props['className'] = '',
 		dataPrefix: $$Props['dataPrefix'] = undefined,

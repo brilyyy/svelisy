@@ -1,9 +1,20 @@
+<script lang="ts" context="module">
+	export type TTextAreaProps = Omit<HTMLTextareaAttributes, 'color'> &
+		IComponentBaseProps & {
+			bordered?: boolean;
+			borderOffset?: boolean;
+			color?: ComponentColor;
+		};
+</script>
+
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
 	import type { TTextAreaProps as $$TProps } from './Input.type';
+	import type { HTMLTextareaAttributes } from 'svelte/elements';
+	import type { ComponentColor, IComponentBaseProps } from '$lib/types';
 
-	type $$Props = $$TProps
+	type $$Props = $$TProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

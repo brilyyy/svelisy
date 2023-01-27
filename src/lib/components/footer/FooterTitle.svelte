@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TTitleProps as $$TProps } from './Footer.type';
 
-	type $$Props = $$TProps
+	type $$Props = $$TProps;
 
 	$: classes = twMerge('footer-title', $$props.class);
 </script>

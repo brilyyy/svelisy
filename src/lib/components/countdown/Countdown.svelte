@@ -6,7 +6,7 @@
 	let timer: NodeJS.Timeout | undefined;
 	let initialValue: number;
 
-	type $$Props = $$TProps
+	type $$Props = $$TProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

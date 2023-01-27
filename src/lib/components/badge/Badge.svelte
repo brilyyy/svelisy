@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TProps as $$BadgeProps } from './Badge.type';
 
-	type $$Props = $$BadgeProps
+	type $$Props = $$BadgeProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

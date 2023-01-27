@@ -1,17 +1,23 @@
 <script lang="ts" context="module">
-	import { twMerge } from 'tailwind-merge';
-	import clsx from 'clsx';
-	import type { InputType, TInputProps as $$TProps } from './Input.type';
-	const isNumeric = (n: any): n is number => !isNaN(parseFloat(n)) && isFinite(n);
+	export type TRangeProps = Omit<HTMLInputAttributes, 'size' | 'color'> &
+		IComponentBaseProps & {
+			bordered?: boolean;
+			borderOffset?: boolean;
+			size?: ComponentSize;
+			color?: ComponentColor;
+		} & {
+			group?: number | string;
+			value?: number;
+		};
 </script>
 
 <script lang="ts">
+	import { twMerge } from 'tailwind-merge';
+	import clsx from 'clsx';
+	import type { HTMLInputAttributes } from 'svelte/elements';
+	import type { ComponentColor, ComponentSize, IComponentBaseProps } from '$lib/types';
 	//
-	interface $$Props extends $$TProps {
-		type?: InputType;
-		group?: number | string;
-		value?: number;
-	}
+	type $$Props = TRangeProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',
@@ -21,6 +27,8 @@
 		color: $$Props['color'] = undefined;
 
 	export { className as class };
+
+	const isNumeric = (n: any): n is number => !isNaN(parseFloat(n)) && isFinite(n);
 
 	$: classes = twMerge(
 		'range',

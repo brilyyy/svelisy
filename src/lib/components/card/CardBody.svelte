@@ -2,7 +2,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import type { TBodyProps as $$BadgeProps } from './Card.type';
 
-	type $$Props = $$BadgeProps
+	type $$Props = $$BadgeProps;
 
 	export let className: $$Props['className'] = '';
 

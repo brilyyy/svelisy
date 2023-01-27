@@ -1,11 +1,22 @@
+<script lang="ts" context="module">
+	export type TFileInputProps = Omit<HTMLInputAttributes, 'size' | 'color'> &
+		IComponentBaseProps & {
+			bordered?: boolean;
+			borderOffset?: boolean;
+			size?: ComponentSize;
+			color?: ComponentColor;
+		} & {
+			files?: FileList;
+		};
+</script>
+
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
-	import type { InputType, TInputProps as $$TProps } from './Input.type';
+	import type { HTMLInputAttributes } from 'svelte/elements';
+	import type { ComponentColor, ComponentSize, IComponentBaseProps } from '$lib/types';
 	//
-	interface $$Props extends $$TProps {
-		files?: FileList;
-	}
+	type $$Props = TFileInputProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

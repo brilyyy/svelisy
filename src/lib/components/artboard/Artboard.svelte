@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TProps as $$ArtboardProps } from './Artboard.type';
 
-	type $$Props = $$ArtboardProps
+	type $$Props = $$ArtboardProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',

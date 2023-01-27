@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TProps as $$AlertProps } from './Alert.type';
 
-	type $$Props = $$AlertProps
+	type $$Props = $$AlertProps;
 
 	export let status: $$Props['status'] = undefined,
 		dataTheme: $$Props['dataTheme'] = undefined,

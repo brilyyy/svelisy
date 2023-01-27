@@ -3,7 +3,7 @@
 	import clsx from 'clsx';
 	import type { TContentProps as $$TProps } from './Hero.type';
 
-	type $$Props = $$TProps
+	type $$Props = $$TProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '';
