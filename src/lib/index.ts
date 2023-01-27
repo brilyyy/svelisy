@@ -29,4 +29,7 @@ export { default as Rating } from './components/rating';
 export { default as Table } from './components/table';
 export { default as Input } from './components/input';
 export { default as Stats } from './components/stats';
+export { default as Menu } from './components/menu';
+export { default as Dropdown } from './components/dropdown';
 export { default as InputGroup } from './components/input-group';
+export { default as BottomNavigation } from './components/bottom-navigation';
