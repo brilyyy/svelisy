@@ -21,13 +21,11 @@
 		size: $$Props['size'] = undefined,
 		half: $$Props['half'] = undefined,
 		hidden: $$Props['hidden'] = undefined,
-		value: $$Props['value'] = -1;
+		value: $$Props['value'] = 0;
 
 	export { className as class };
 
-	let valueIndex = value - 1;
-
-	const contextStore = writable({ value: valueIndex, hidden: hidden || false });
+	const contextStore = writable({ value: value, hidden: hidden || false });
 
 	setContext<TRatingContext>(RATING_CTX, contextStore);
 
@@ -38,19 +36,20 @@
 	function setupRatingItem() {
 		const children = ratingEl.querySelectorAll('.svelisy-rating-item');
 		for (let [index, item] of Array.from(children).entries()) {
-			if (hidden && index === 0) {
+			const inputItem = item as HTMLInputElement;
+			if (item.className.includes('hidden') && $contextStore.value === 0 && $contextStore.hidden) {
 				continue;
 			}
-			if (hidden) {
-				item.setAttribute('data-svelisy-rating', index.toString());
-				item.addEventListener('click', () => onStarClick(index - 1));
-			}
+
+			item.setAttribute('data-svelisy-rating', `${index + 1}`);
+			item.addEventListener('click', () => onStarClick(inputItem));
 		}
 	}
 
-	function onStarClick(index: number) {
-		contextStore.set({ ...$contextStore, value: index });
-		value = $contextStore.value + 1;
+	function onStarClick(item: HTMLInputElement) {
+		const itemValue = parseInt(item.getAttribute('data-svelisy-rating')!);
+		contextStore.set({ ...$contextStore, value: itemValue });
+		value = itemValue;
 	}
 
 	$: classes = twMerge(
@@ -59,14 +58,16 @@
 		clsx({
 			[`rating-${size}`]: size,
 			'rating-half': half,
-			'rating-hidden': hidden || valueIndex === -1
+			'rating-hidden': hidden || value === 0
 		})
 	);
+
+	$: $contextStore;
 </script>
 
 <div bind:this={ratingEl} aria-label="Rating" data-theme={dataTheme} class={classes}>
-	{#if valueIndex === -1}
-		<RatingItem class={clsx(classes, 'hidden')} checked readonly />
+	{#if $contextStore.value === 0}
+		<input type="checkbox" class={clsx(classes, 'hidden')} checked readonly />
 	{/if}
 	<slot />
 </div>

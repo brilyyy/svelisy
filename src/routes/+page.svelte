@@ -1,12 +1,17 @@
-<script>
-	import { Tabs } from '$lib';
+<script lang="ts">
+	import { Rating } from '$lib';
+
+	let value: number = 0;
+
+	$: {
+		console.log(value);
+	}
 </script>
 
-<Tabs boxed>
-	<Tabs.Tab eventKey="A">A</Tabs.Tab>
-	<Tabs.Tab eventKey="B">A</Tabs.Tab>
-	<Tabs.Tab eventKey="C">A</Tabs.Tab>
-	<Tabs.Tab eventKey="C">A</Tabs.Tab>
-	<Tabs.Tab eventKey="C">A</Tabs.Tab>
-	<Tabs.Tab eventKey="C">A</Tabs.Tab>
-</Tabs>
+<Rating bind:value hidden>
+	<Rating.Item class="mask mask-heart bg-red-400" />
+	<Rating.Item class="mask mask-heart bg-orange-400" />
+	<Rating.Item class="mask mask-heart bg-yellow-400" />
+	<Rating.Item class="mask mask-heart bg-lime-400" />
+	<Rating.Item class="mask mask-heart bg-green-400" />
+</Rating>

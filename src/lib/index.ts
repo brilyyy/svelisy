@@ -24,3 +24,5 @@ export { default as Toast } from './components/toast';
 export { default as WindowMockup } from './components/window-mockup';
 export { default as Code } from './components/code-mockup';
 export { default as Tabs } from './components/tabs';
+export { default as ChatBubble } from './components/chat-bubble';
+export { default as Rating } from './components/rating';

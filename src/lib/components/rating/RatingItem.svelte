@@ -5,11 +5,13 @@
 	import type { TRatingContext } from './Rating.svelte';
 	import { RATING_CTX } from './Rating.svelte';
 
-	interface $$Props extends $$TProps {}
+	interface $$Props extends $$TProps {
+		checked?: boolean;
+	}
 
 	let el: Element;
-	let checked: boolean = false;
-	let elIdx: number;
+	export let checked: $$Props['checked'] = undefined;
+	let thisElValue: number;
 
 	export let className: $$Props['className'] = undefined;
 
@@ -26,10 +28,13 @@
 
 		const children = el.parentNode?.children;
 		const index = Array.prototype.indexOf.call(children, el);
-		elIdx = index;
+
+		_checked = checked !== undefined ? $$props.checked : $state.value - 1 === index;
 	}
-	$: _checked = elIdx === $state.value;
+	$: _checked = checked;
+	// $: _checked = checked;
 	$: classes = clsx('svelisy-rating-item', className);
+	$: $state, calculateActive();
 </script>
 
 <input bind:this={el} {...$$restProps} class={classes} type="checkbox" bind:checked={_checked} />
