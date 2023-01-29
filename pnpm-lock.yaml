@@ -9,12 +9,11 @@ specifiers:
   '@typescript-eslint/parser': ^5.45.0
   autoprefixer: ^10.4.7
   clsx: ^1.2.1
-  daisyui: ^2.47.0
+  daisyui: ^2.49.0
   eslint: ^8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
   histoire: ^0.12.4
-  nanoid: ^4.0.0
   postcss: ^8.4.14
   postcss-load-config: ^4.0.1
   prettier: ^2.8.0
@@ -30,14 +29,6 @@ specifiers:
   typescript: ^4.9.3
   vite: ^4.0.0
 
-dependencies:
-  clsx: 1.2.1
-  nanoid: 4.0.0
-  svelte: 3.55.1
-  svelte-portal: 2.2.0
-  tailwind-merge: 1.8.1
-  theme-change: 2.3.0
-
 devDependencies:
   '@histoire/plugin-svelte': 0.12.4_76dbu7m65vjnozzv4fj7qep6aq
   '@sveltejs/adapter-auto': 1.0.2_@sveltejs+kit@1.2.6
@@ -46,7 +37,8 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.49.0_iu322prlnwsygkcra5kbpy22si
   '@typescript-eslint/parser': 5.49.0_7uibuqfxkfaozanbtbziikiqje
   autoprefixer: 10.4.13_postcss@8.4.21
-  daisyui: 2.47.0_gbtt6ss3tbiz4yjtvdr6fbrj44
+  clsx: 1.2.1
+  daisyui: 2.49.0_gbtt6ss3tbiz4yjtvdr6fbrj44
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0_eslint@8.32.0
   eslint-plugin-svelte3: 4.0.0_tmo5zkisvhu6htudosk5k7m6pu
@@ -55,9 +47,13 @@ devDependencies:
   postcss-load-config: 4.0.1_postcss@8.4.21
   prettier: 2.8.3
   prettier-plugin-svelte: 2.9.0_kdmmghgdi3ngrsq6otxkjilbry
+  svelte: 3.55.1
   svelte-check: 3.0.2_gqx7lw3sljhsd4bstor5m2aa2u
+  svelte-portal: 2.2.0
   svelte-preprocess: 4.10.7_awginupsaj455aehf5x365sh44
+  tailwind-merge: 1.8.1
   tailwindcss: 3.2.4_postcss@8.4.21
+  theme-change: 2.3.0
   tslib: 2.4.1
   typescript: 4.9.4
   vite: 4.0.4
@@ -985,7 +981,7 @@ packages:
   /clsx/1.2.1:
     resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
     engines: {node: '>=6'}
-    dev: false
+    dev: true
 
   /color-convert/2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -1090,8 +1086,8 @@ packages:
       cssom: 0.3.8
     dev: true
 
-  /daisyui/2.47.0_gbtt6ss3tbiz4yjtvdr6fbrj44:
-    resolution: {integrity: sha512-svZpXKldtHjXTEdj/lu2n7b+EQJSatqvmVB59k4dhCDOYUhUZ3jtGuPrgOJlPysHhDjxjCRWWug/fgV5e8tc/w==}
+  /daisyui/2.49.0_gbtt6ss3tbiz4yjtvdr6fbrj44:
+    resolution: {integrity: sha512-+hEFMupi/7rqkAH4d3iBWj1TXRq73V3PrkJ3HiDqFuQgMoE1/UQOgMoeqaHa3r4IRo4fjMNauwHBA17qT0YSIA==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
@@ -2146,12 +2142,6 @@ packages:
     hasBin: true
     dev: true
 
-  /nanoid/4.0.0:
-    resolution: {integrity: sha512-IgBP8piMxe/gf73RTQx7hmnhwz0aaEXYakvqZyE302IXW3HyVNhdNGC+O2MwMAVhLEnvXlvKtGbtJf6wvHihCg==}
-    engines: {node: ^14 || ^16 || >=18}
-    hasBin: true
-    dev: false
-
   /natural-compare-lite/1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
@@ -2775,7 +2765,7 @@ packages:
 
   /svelte-portal/2.2.0:
     resolution: {integrity: sha512-jhtZWtD6cUE2nMw46dJ5VXWYiqnER+JH+V/BmNBQ5fNP/YdsJCpJi+DemUy9msklqGb0f+wLhJPBtKHLWQvzjg==}
-    dev: false
+    dev: true
 
   /svelte-preprocess/4.10.7_awginupsaj455aehf5x365sh44:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
@@ -2883,6 +2873,7 @@ packages:
   /svelte/3.55.1:
     resolution: {integrity: sha512-S+87/P0Ve67HxKkEV23iCdAh/SX1xiSfjF1HOglno/YTbSTW7RniICMCofWGdJJbdjw3S+0PfFb1JtGfTXE0oQ==}
     engines: {node: '>= 8'}
+    dev: true
 
   /svelte2tsx/0.6.0_atrrhq7vg4ekua4nnyrpuardle:
     resolution: {integrity: sha512-TrxfQkO7CKi8Pu2eC/FyteDCdk3OOeQV5u6z7OjYAsOhsd0ClzAKqxJdvp6xxNQLrbFzf/XvCi9Fy8MQ1MleFA==}
@@ -2902,7 +2893,7 @@ packages:
 
   /tailwind-merge/1.8.1:
     resolution: {integrity: sha512-+fflfPxvHFr81hTJpQ3MIwtqgvefHZFUHFiIHpVIRXvG/nX9+gu2P7JNlFu2bfDMJ+uHhi/pUgzaYacMoXv+Ww==}
-    dev: false
+    dev: true
 
   /tailwindcss/3.2.4_postcss@8.4.21:
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
@@ -2944,7 +2935,7 @@ packages:
 
   /theme-change/2.3.0:
     resolution: {integrity: sha512-MOv3g4dQfte9Q7WZKyLRshcw9JqcJCwB+CO1OS7lN1WMJcQyPzmpgwm5Ve55vQ4qt62g++A9+8s1x+vRPpm42w==}
-    dev: false
+    dev: true
 
   /tiny-glob/0.2.9:
     resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
