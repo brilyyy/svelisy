@@ -1,7 +1,7 @@
 import type { ComponentColor, IComponentBaseProps } from '$lib/types';
-import type { HTMLAttributes } from 'svelte/elements';
+import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-export type TProps = HTMLAttributes<HTMLAnchorElement> &
+export type TProps = HTMLAnchorAttributes &
 	IComponentBaseProps & {
 		color?: 'neutral' | ComponentColor;
 		hover?: boolean;

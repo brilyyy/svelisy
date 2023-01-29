@@ -26,6 +26,7 @@ export { default as Code } from './components/code-mockup';
 export { default as Tabs } from './components/tabs';
 export { default as ChatBubble } from './components/chat-bubble';
 export { default as Rating } from './components/rating';
+export { default as Card } from './components/card';
 export { default as Table } from './components/table';
 export { default as Input } from './components/input';
 export { default as Stats } from './components/stats';

@@ -20,7 +20,7 @@
 [![][npm]][npm-url] [![][license]][license-url]
 
 - [Official daisyUI website →](https://daisyui.com/)
-- Svelisy docs is in progress
+- Svelisy docs is in progress (I'm also confused with my own library xD)
 
 🙋‍♂️ Issues? [Go to here](https://github.com/brilyyy/svelisy/issues)
 
@@ -30,7 +30,7 @@ Import svelisy component to your Svelte Component
 
 ```svelte
 <script lang="ts">
-	import { Button } from 'svelisy';
+ import { Button } from 'svelisy';
 </script>
 
 <Button color="primary">Click Here</Button>
@@ -112,12 +112,12 @@ To apply / select theme use SvelisyProvider & ThemeChanger
 
 ```svelte
 <script lang="ts">
-	import { SvelisyProvider, SvelisyThemeChanger } from 'svelisy/provider';
+ import { SvelisyProvider, SvelisyThemeChanger } from 'svelisy/provider';
 </script>
 
 <SvelisyProvider>
-	<SvelisyThemeChanger />
-	<slot />
+ <SvelisyThemeChanger />
+ <slot />
 </SvelisyProvider>
 ```
 
