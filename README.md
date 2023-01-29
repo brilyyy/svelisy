@@ -1,29 +1,28 @@
 # Svelisy - 🌻 Svelte daisyUI
 
-<hr />
+## Components
 
-### Docs work in progress
-
-### Worked component
+<details>
+  <summary>Show components</summary>
 
 - [x] Alert
 - [x] Artboard
 - [x] Avatar
 - [x] Badge
-- [ ] BottomNavigation
+- [x] BottomNavigation
 - [x] Breadcrumbs
 - [x] Button
 - [x] ButtonGroup
 - [x] Card
-- [ ] Carousel
+- [x] Carousel
 - [x] ChatBubble
 - [x] Checkbox
 - [x] CodeMockup
-- [ ] Collapse
+- [x] Collapse
 - [x] Countdown
 - [x] Divider
 - [x] Drawer
-- [ ] Dropdown
+- [x] Dropdown
 - [x] FileInput
 - [x] Footer
 - [x] Hero
@@ -33,8 +32,8 @@
 - [x] Kbd
 - [x] Link
 - [x] Mask
-- [ ] Menu
-- [ ] Modal
+- [x] Menu
+- [x] Modal
 - [x] Navbar
 - [x] Pagination
 - [x] PhoneMockup
@@ -55,3 +54,4 @@
 - [x] Toast
 - [x] Tooltip
 - [x] WindowMockup
+</details>

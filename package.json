@@ -69,7 +69,12 @@
 	},
 	"type": "module",
 	"peerDependencies": {
-		"daisyui": "^2.47.0"
+		"daisyui": "^2.47.0",
+		"svelte": "^3.54.0",
+		"tailwind-merge": "^1.8.1",
+		"tailwindcss": "^3.1.5",
+		"theme-change": "^2.3.0",
+		"clsx": "^1.2.1"
 	},
 	"module": "./package/index.js",
 	"license": "MIT"
