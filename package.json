@@ -36,7 +36,7 @@
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
 		"story:preview": "histoire preview",
-		"publish": "pnpm build && cd ./package && npm publish"
+		"publish": "pnpm build && npm publish ./package"
 	},
 	"devDependencies": {
 		"@histoire/plugin-svelte": "^0.12.4",
