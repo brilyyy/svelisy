@@ -1,6 +1,30 @@
 {
 	"name": "svelisy",
-	"version": "0.1.0",
+	"version": "1.0.0",
+	"description": "svelisy - DaisyUI components built with Svelte 🌼",
+	"author": "Brilyan <brilyyy.dev@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brilyyy/svelisy.git"
+	},
+	"keywords": [
+		"design-system",
+		"tailwindcss",
+		"components",
+		"ui-library",
+		"component",
+		"framework",
+		"tailwind",
+		"theming",
+		"postcss",
+		"design",
+		"css",
+		"ui",
+		"Svelte",
+		"Sveltekit",
+		"UI",
+		"Component Library"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
@@ -12,7 +36,7 @@
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
 		"story:preview": "histoire preview",
-		"publish": "pnpm build && npm publish ./package"
+		"publish": "pnpm build && cd ./package && npm publish"
 	},
 	"devDependencies": {
 		"@histoire/plugin-svelte": "^0.12.4",
@@ -22,7 +46,6 @@
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"autoprefixer": "^10.4.7",
-		"daisyui": "^2.47.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
@@ -41,11 +64,13 @@
 	"type": "module",
 	"dependencies": {
 		"clsx": "^1.2.1",
-		"nanoid": "^4.0.0",
 		"svelte": "^3.54.0",
 		"svelte-portal": "^2.2.0",
 		"tailwind-merge": "^1.8.1",
 		"theme-change": "^2.3.0"
+	},
+	"peerDependencies": {
+		"daisyui": "^2.47.0"
 	},
 	"module": "./package/index.js",
 	"license": "MIT"
