@@ -4,7 +4,7 @@ const config = {
 	theme: {
 		extend: {}
 	},
-	safelist: [...require('./src/lib/tailwind/safelist.cjs')],
+	safelist: [...require('./src/lib/tailwind/safelists.cjs')],
 
 	plugins: [require('daisyui')]
 };

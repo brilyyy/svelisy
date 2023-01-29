@@ -123,6 +123,19 @@ To apply / select theme use SvelisyProvider & ThemeChanger
 
 Use tools like the official <a href="https://daisyui.com/theme-generator/">daisyUI Theme Generator</a> or <a href="https://themes.ionevolve.com/">daisyUI Theme Builder</a> to easily create your own themes.
 
+## ⚙️ Configuration
+
+Configure tailwindcss to not purging component class
+
+```js
+// tailwind.config.cjs
+module.exports = {
+ ...
+ safelist: [...require('svelisy/tailwind/safelists.cjs')],
+ ...
+};
+```
+
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/brilyyy/svelisy/blob/main/LICENSE) file for details.
