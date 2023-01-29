@@ -15,7 +15,7 @@
 
 </div>
 
-![card-3](https://user-images.githubusercontent.com/64439681/181566540-b1e37814-c72a-48af-bbe2-80367b000770.png)
+![card-3](https://raw.githubusercontent.com/brilyyy/svelisy/main/media/banner.png)
 
 [![][npm]][npm-url] [![][license]][license-url]
 
