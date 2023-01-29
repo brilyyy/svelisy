@@ -130,8 +130,11 @@ Configure tailwindcss to not purging component class
 ```js
 // tailwind.config.cjs
 module.exports = {
- ...
- safelist: [...require('svelisy/tailwind/safelists.cjs')],
+content: [
+  './src/**/*.{html,js,svelte,ts}',
+  'node_modules/daisyui/dist/**/*.js',
+  'node_modules/svelisy/**/*.svelte'
+ ],
  ...
 };
 ```
