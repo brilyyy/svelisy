@@ -1,5 +1,5 @@
 
-# Svelisy - 🌻 Svelte daisyUI
+# Svelisy 1.0
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/brilyyy/svelisy/main/media/logo.png" width="150" alt="Svelisy Logo" >
@@ -7,9 +7,25 @@
 **daisyUI components built with Svelte & Typescript**
 </div>
 
-[![][npm]][npm-url]
+[![][npm]][npm-url] [![][license]][license-url]
 
-## Components
+- [Official daisyUI website →](https://daisyui.com/)
+
+🙋‍♂️ Issues? [Go to here](https://github.com/brilyyy/svelisy/issues)
+
+## ⚡️ Quick Start
+
+Import svelisy component to your Svelte Component
+
+```svelte
+<script lang="ts">
+    import { Button } from "svelisy";
+</script>
+
+<Button color="primary">Click Here</Button>
+```
+
+## 🌼 Components
 
 <details>
   <summary>Show/Hide</summary>
@@ -79,5 +95,28 @@
 
 </details>
 
+### 🌈 Themes
+
+To apply / select theme use SvelisyProvider & ThemeChanger
+
+```svelte
+<script lang="ts">
+    import { SvelisyProvider, SvelisyThemeChanger } from 'svelisy/provider';
+</script>
+
+<SvelisyProvider>
+  <SvelisyThemeChanger />
+  <slot />
+</SvelisyProvider>
+```
+
+Use tools like the official <a href="https://daisyui.com/theme-generator/">daisyUI Theme Generator</a> or <a href="https://themes.ionevolve.com/">daisyUI Theme Builder</a> to easily create your own themes.
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/brilyyy/svelisy/blob/main/LICENSE) file for details.
+
 [npm]: https://badgen.net/github/tag/brilyyy/svelisy?label=version&color=green
+[license]: https://badgen.net/github/license/brilyyy/svelisy?color=green
 [npm-url]: https://www.npmjs.com/package/svelisy
+[license-url]: https://github.com/brilyyy/svelisy/blob/main/LICENSE
