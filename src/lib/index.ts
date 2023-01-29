@@ -34,5 +34,6 @@ export { default as Dropdown } from './components/dropdown';
 export { default as Modal } from './components/modal';
 export { default as Collapse } from './components/collapse';
 export { default as Carousel } from './components/carousel';
+export { default as Navbar } from './components/navbar';
 export { default as InputGroup } from './components/input-group';
 export { default as BottomNavigation } from './components/bottom-navigation';

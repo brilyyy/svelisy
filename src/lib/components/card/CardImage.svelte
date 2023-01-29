@@ -1,9 +1,7 @@
 <script lang="ts">
 	import type { TImageProps as $$BadgeProps } from './Card.type';
 
-	interface $$Props extends $$BadgeProps {}
-
-	export { className as class };
+	type $$Props = $$BadgeProps
 </script>
 
 <figure>

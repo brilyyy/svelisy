@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
-	import clsx from 'clsx';
 	import type { TProps as $$TProps } from './Toast.type';
 	import { horizontalOptions, verticalOptions } from './Toast.type';
-	import { createEventForwarder } from '$lib/utils';
-	import { get_current_component } from 'svelte/internal';
 	//
 	type $$Props = $$TProps;
 
@@ -20,8 +17,6 @@
 		verticalOptions[vertical!],
 		className
 	);
-
-	const forwardEvents = createEventForwarder(get_current_component());
 </script>
 
 <div {...$$restProps} data-theme={dataTheme} class={classes}>

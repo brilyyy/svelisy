@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-	import type { HTMLAttributes, HTMLLiAttributes } from 'svelte/elements';
+	import type { HTMLAttributes } from 'svelte/elements';
 	import type { IComponentBaseProps } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 

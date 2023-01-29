@@ -6,7 +6,6 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { IComponentBaseProps } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
-	import clsx from 'clsx';
 
 	type $$Props = TStatItemProps;
 

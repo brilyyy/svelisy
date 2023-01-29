@@ -6,11 +6,10 @@
 
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
-	import { createEventDispatcher, onMount, setContext } from 'svelte';
+	import { onMount, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import clsx from 'clsx';
 	import type { TRatingProps as $$TProps } from './Rating.type';
-	import RatingItem from './RatingItem.svelte';
 
 	type $$Props = $$TProps;
 

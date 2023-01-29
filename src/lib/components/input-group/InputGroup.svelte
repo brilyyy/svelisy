@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-	import type { HTMLLabelAttributes, HTMLTableAttributes } from 'svelte/elements';
+	import type { HTMLLabelAttributes } from 'svelte/elements';
 	import type { ComponentSize, IComponentBaseProps } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';

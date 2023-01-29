@@ -1,10 +1,10 @@
-
 # Svelisy 1.0
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/brilyyy/svelisy/main/media/logo.png" width="150" alt="Svelisy Logo" >
 
 **daisyUI components built with Svelte & Typescript**
+
 </div>
 
 <div align="center">
@@ -30,7 +30,7 @@ Import svelisy component to your Svelte Component
 
 ```svelte
 <script lang="ts">
-    import { Button } from "svelisy";
+	import { Button } from 'svelisy';
 </script>
 
 <Button color="primary">Click Here</Button>
@@ -112,12 +112,12 @@ To apply / select theme use SvelisyProvider & ThemeChanger
 
 ```svelte
 <script lang="ts">
-    import { SvelisyProvider, SvelisyThemeChanger } from 'svelisy/provider';
+	import { SvelisyProvider, SvelisyThemeChanger } from 'svelisy/provider';
 </script>
 
 <SvelisyProvider>
-  <SvelisyThemeChanger />
-  <slot />
+	<SvelisyThemeChanger />
+	<slot />
 </SvelisyProvider>
 ```
 

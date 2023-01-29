@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
-	import clsx from 'clsx';
 	import type { TProps as $$TProps } from './CodeMockup.type';
 	type $$Props = $$TProps;
 

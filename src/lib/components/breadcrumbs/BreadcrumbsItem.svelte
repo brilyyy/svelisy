@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { twMerge } from 'tailwind-merge';
-	import clsx from 'clsx';
 	import type { TItemProps as $$TItemProps } from './Breadcrumbs.type';
 
 	type $$Props = $$TItemProps;

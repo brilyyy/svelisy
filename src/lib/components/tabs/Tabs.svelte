@@ -23,7 +23,7 @@
 	import clsx from 'clsx';
 	import { twMerge } from 'tailwind-merge';
 	import { writable, type Writable } from 'svelte/store';
-	import { setContext, onDestroy, onMount, createEventDispatcher } from 'svelte';
+	import { setContext, onMount, createEventDispatcher } from 'svelte';
 
 	type $$Props = TTabsProps;
 
@@ -38,7 +38,6 @@
 	export { className as class };
 
 	let element: HTMLDivElement;
-	let tabNodes: Element[];
 
 	const dispatch = createEventDispatcher();
 

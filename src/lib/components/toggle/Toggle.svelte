@@ -21,12 +21,12 @@
 
 	export { className as class };
 
-	function watchIndeterminate(i: boolean) {
+	function watchIndeterminate() {
 		if (inputElement) inputElement.indeterminate = !!indeterminate;
 	}
 
 	onMount(() => {
-		watchIndeterminate(indeterminate!);
+		watchIndeterminate();
 	});
 
 	$: classes = twMerge(
@@ -38,7 +38,7 @@
 		})
 	);
 	$: checked = indeterminate || checked;
-	$: watchIndeterminate(indeterminate!);
+	$: watchIndeterminate();
 </script>
 
 <input

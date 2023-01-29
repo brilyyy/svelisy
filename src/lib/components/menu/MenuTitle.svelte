@@ -10,7 +10,6 @@
 	type $$Props = TMenuTitleProps;
 
 	export let className: $$Props['className'] = '';
-	export let dataTheme: $$Props['dataTheme'] = undefined;
 
 	export { className as class };
 

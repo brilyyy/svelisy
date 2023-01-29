@@ -1,5 +1,5 @@
 import type { ComponentColor, IComponentBaseProps } from '$lib/types';
-import type { HTMLAttributes, HTMLLinkAttributes } from 'svelte/elements';
+import type { HTMLAttributes } from 'svelte/elements';
 
 export type TProps = HTMLAttributes<HTMLAnchorElement> &
 	IComponentBaseProps & {

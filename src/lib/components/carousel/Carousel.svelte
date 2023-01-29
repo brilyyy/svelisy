@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+	export const CAROUSEL_CTX = 'svelisy-carousel-context';
 	export type TCarouselProps = HTMLAttributes<HTMLDivElement> &
 		IComponentBaseProps & {
 			display?: 'slider' | 'numbered' | 'sequential';
@@ -6,6 +7,10 @@
 			vertical?: boolean;
 			width?: CarouselItemWidth;
 		};
+	export type TCarouselContext = Writable<{
+		width?: CarouselItemWidth;
+		hasButtons?: boolean;
+	}>;
 </script>
 
 <script lang="ts">
@@ -13,9 +18,10 @@
 	import type { IComponentBaseProps } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
-	import { onMount } from 'svelte';
+	import { onMount, setContext } from 'svelte';
 	import type { CarouselItemWidth } from './CarouselItem.svelte';
 	import Button from '../button/Button.svelte';
+	import { writable, type Writable } from 'svelte/store';
 
 	type $$Props = TCarouselProps;
 
@@ -30,6 +36,13 @@
 
 	let carouselEl: HTMLDivElement;
 	let children: Element[];
+
+	const ctxStore = writable({
+		width: display !== 'slider' ? 'full' : width,
+		hasButtons: display === 'sequential'
+	});
+
+	setContext<TCarouselContext>(CAROUSEL_CTX, ctxStore);
 
 	onMount(() => {
 		setupCarousel();

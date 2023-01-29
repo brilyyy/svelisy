@@ -1,4 +1,4 @@
-import type { ComponentColor, ComponentPosition, IComponentBaseProps } from '$lib/types';
+import type { IComponentBaseProps } from '$lib/types';
 import type { HTMLAttributes } from 'svelte/elements';
 
 export const horizontalOptions = {

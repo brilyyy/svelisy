@@ -3,28 +3,27 @@
 	export type TCarouselItemProps = HTMLAttributes<HTMLDivElement> & {
 		src?: string;
 		alt?: string;
-		width?: CarouselItemWidth;
-		hasButtons?: boolean;
 	};
 </script>
 
 <script lang="ts">
 	import clsx from 'clsx';
-	import { onMount } from 'svelte';
+	import { getContext, onMount } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { twMerge } from 'tailwind-merge';
 	import Button from '../button/Button.svelte';
+	import { CAROUSEL_CTX, type TCarouselContext } from './Carousel.svelte';
 
 	type $$Props = TCarouselItemProps;
 
 	export let src: $$Props['src'] = undefined;
 	export let alt: $$Props['alt'] = undefined;
-	export let width: $$Props['width'] = undefined;
-	export let hasButtons: $$Props['hasButtons'] = undefined;
 
 	let itemEl: HTMLDivElement;
 	let prevEl: number;
 	let nextEl: number;
+
+	const state = getContext<TCarouselContext>(CAROUSEL_CTX);
 
 	onMount(() => {
 		const children = itemEl.parentNode?.children;
@@ -40,7 +39,14 @@
 		} else {
 			nextEl = index + 1;
 		}
+
+		width = $state.width;
+		hasButtons = $state.hasButtons;
 	});
+
+	$: width = $state.width;
+
+	$: hasButtons = $state.hasButtons;
 
 	$: classes = twMerge(
 		'svelisy-carousel-item',
@@ -56,6 +62,8 @@
 	$: imageClasses = clsx({
 		'w-full': width === 'full'
 	});
+
+	$: $state;
 </script>
 
 <div bind:this={itemEl} {...$$restProps} class={classes}>

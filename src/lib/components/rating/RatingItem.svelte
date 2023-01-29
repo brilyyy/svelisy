@@ -11,7 +11,6 @@
 
 	let el: Element;
 	export let checked: $$Props['checked'] = undefined;
-	let thisElValue: number;
 
 	export let className: $$Props['className'] = undefined;
 

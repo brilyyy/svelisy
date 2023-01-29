@@ -2,8 +2,6 @@
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
 	import type { TProps as $$TProps } from './Tooltip.type';
-	import { createEventForwarder } from '$lib/utils';
-	import { get_current_component } from 'svelte/internal';
 	//
 	type $$Props = $$TProps;
 
@@ -27,8 +25,6 @@
 			'tooltip-right': position === 'right'
 		})
 	);
-
-	const forwardEvents = createEventForwarder(get_current_component());
 </script>
 
 <div

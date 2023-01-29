@@ -1,5 +1,5 @@
 import type { ComponentColor, IComponentBaseProps } from '$lib/types';
-import type { HTMLAttributes, HTMLLiAttributes, HTMLProgressAttributes } from 'svelte/elements';
+import type { HTMLAttributes, HTMLLiAttributes } from 'svelte/elements';
 
 export type TProps = HTMLAttributes<HTMLUListElement> &
 	IComponentBaseProps & {
