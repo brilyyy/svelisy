@@ -46,7 +46,7 @@
 		<label
 			class={overlayClasses}
 			on:click={() => {
-				dispatch('overlayclick');
+				dispatch('overlay-click');
 			}}
 		/>
 		<slot name="side" />

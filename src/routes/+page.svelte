@@ -1,38 +1,29 @@
 <script lang="ts">
-	import { Table } from '$lib';
+	import Carousel from '$lib/components/carousel/Carousel.svelte';
+	import CarouselItem from '$lib/components/carousel/CarouselItem.svelte';
+
+	let open = false;
 </script>
 
-<Table compact>
-	<!-- head -->
-	<thead>
-		<Table.Row>
-			<th />
-			<th>Name</th>
-			<th>Job</th>
-			<th>Favorite Color</th>
-		</Table.Row>
-	</thead>
-	<tbody>
-		<!-- row 1 -->
-		<Table.Row hover>
-			<th>1</th>
-			<td>Cy Ganderton</td>
-			<td>Quality Control Specialist</td>
-			<td>Blue</td>
-		</Table.Row>
-		<!-- row 2 -->
-		<Table.Row>
-			<th>2</th>
-			<td>Hart Hagerty</td>
-			<td>Desktop Support Technician</td>
-			<td>Purple</td>
-		</Table.Row>
-		<!-- row 3 -->
-		<Table.Row>
-			<th>3</th>
-			<td>Brice Swyre</td>
-			<td>Tax Accountant</td>
-			<td>Red</td>
-		</Table.Row>
-	</tbody>
-</Table>
+<Carousel display="sequential" class="rounded-box">
+	<CarouselItem
+		hasButtons
+		src="https://api.lorem.space/image/car?w=800&h=200&hash=8B7BCDC2"
+		alt="Car"
+	/>
+	<CarouselItem
+		hasButtons
+		src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB"
+		alt="Car"
+	/>
+	<CarouselItem
+		hasButtons
+		src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6"
+		alt="Car"
+	/>
+	<CarouselItem
+		hasButtons
+		src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693"
+		alt="Car"
+	/>
+</Carousel>

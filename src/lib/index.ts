@@ -31,5 +31,7 @@ export { default as Input } from './components/input';
 export { default as Stats } from './components/stats';
 export { default as Menu } from './components/menu';
 export { default as Dropdown } from './components/dropdown';
+export { default as Modal } from './components/modal';
+export { default as Collapse } from './components/collapse';
 export { default as InputGroup } from './components/input-group';
 export { default as BottomNavigation } from './components/bottom-navigation';

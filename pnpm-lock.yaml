@@ -21,9 +21,11 @@ specifiers:
   prettier-plugin-svelte: ^2.8.1
   svelte: ^3.54.0
   svelte-check: ^3.0.1
+  svelte-portal: ^2.2.0
   svelte-preprocess: ^4.10.7
   tailwind-merge: ^1.8.1
   tailwindcss: ^3.1.5
+  theme-change: ^2.3.0
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
@@ -32,7 +34,9 @@ dependencies:
   clsx: 1.2.1
   nanoid: 4.0.0
   svelte: 3.55.1
+  svelte-portal: 2.2.0
   tailwind-merge: 1.8.1
+  theme-change: 2.3.0
 
 devDependencies:
   '@histoire/plugin-svelte': 0.12.4_76dbu7m65vjnozzv4fj7qep6aq
@@ -2769,6 +2773,10 @@ packages:
       svelte: 3.55.1
     dev: true
 
+  /svelte-portal/2.2.0:
+    resolution: {integrity: sha512-jhtZWtD6cUE2nMw46dJ5VXWYiqnER+JH+V/BmNBQ5fNP/YdsJCpJi+DemUy9msklqGb0f+wLhJPBtKHLWQvzjg==}
+    dev: false
+
   /svelte-preprocess/4.10.7_awginupsaj455aehf5x365sh44:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
@@ -2933,6 +2941,10 @@ packages:
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
+
+  /theme-change/2.3.0:
+    resolution: {integrity: sha512-MOv3g4dQfte9Q7WZKyLRshcw9JqcJCwB+CO1OS7lN1WMJcQyPzmpgwm5Ve55vQ4qt62g++A9+8s1x+vRPpm42w==}
+    dev: false
 
   /tiny-glob/0.2.9:
     resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}

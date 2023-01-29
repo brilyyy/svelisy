@@ -43,7 +43,10 @@
 		"clsx": "^1.2.1",
 		"nanoid": "^4.0.0",
 		"svelte": "^3.54.0",
-		"tailwind-merge": "^1.8.1"
+		"svelte-portal": "^2.2.0",
+		"tailwind-merge": "^1.8.1",
+		"theme-change": "^2.3.0"
 	},
-	"module": "./package/index.js"
+	"module": "./package/index.js",
+	"license": "MIT"
 }
