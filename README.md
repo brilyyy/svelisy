@@ -20,6 +20,7 @@
 [![][npm]][npm-url] [![][license]][license-url]
 
 - [Official daisyUI website →](https://daisyui.com/)
+- Svelisy docs is in progress
 
 🙋‍♂️ Issues? [Go to here](https://github.com/brilyyy/svelisy/issues)
 
