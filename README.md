@@ -95,7 +95,7 @@ Import svelisy component to your Svelte Component
 
 </details>
 
-### 🌈 Themes
+## 🌈 Themes
 
 To apply / select theme use SvelisyProvider & ThemeChanger
 
