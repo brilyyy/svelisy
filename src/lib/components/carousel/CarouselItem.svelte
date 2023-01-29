@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	export type CarouselItemWidth = 'full' | 'half';
-	export type TCollapseContentProps = HTMLAttributes<HTMLDivElement> & {
+	export type TCarouselItemProps = HTMLAttributes<HTMLDivElement> & {
 		src?: string;
 		alt?: string;
 		width?: CarouselItemWidth;
@@ -15,7 +15,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import Button from '../button/Button.svelte';
 
-	type $$Props = TCollapseContentProps;
+	type $$Props = TCarouselItemProps;
 
 	export let src: $$Props['src'] = undefined;
 	export let alt: $$Props['alt'] = undefined;

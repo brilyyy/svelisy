@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	export type TCollapseProps = HTMLAttributes<HTMLDivElement> &
+	export type TCarouselProps = HTMLAttributes<HTMLDivElement> &
 		IComponentBaseProps & {
 			display?: 'slider' | 'numbered' | 'sequential';
 			snap?: 'start' | 'center' | 'end';
@@ -17,7 +17,7 @@
 	import type { CarouselItemWidth } from './CarouselItem.svelte';
 	import Button from '../button/Button.svelte';
 
-	type $$Props = TCollapseProps;
+	type $$Props = TCarouselProps;
 
 	export let className: $$Props['className'] = '';
 	export let dataTheme: $$Props['dataTheme'] = undefined;
