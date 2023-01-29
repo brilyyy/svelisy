@@ -15,6 +15,8 @@
 
 </div>
 
+![card-3](https://user-images.githubusercontent.com/64439681/181566540-b1e37814-c72a-48af-bbe2-80367b000770.png)
+
 [![][npm]][npm-url] [![][license]][license-url]
 
 - [Official daisyUI website →](https://daisyui.com/)
