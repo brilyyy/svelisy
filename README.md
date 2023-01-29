@@ -7,6 +7,14 @@
 **daisyUI components built with Svelte & Typescript**
 </div>
 
+<div align="center">
+  
+༼ つ ◕_◕ ༽つ  Please share  
+  
+[![][tweet]][tweet-url]
+
+</div>
+
 [![][npm]][npm-url] [![][license]][license-url]
 
 - [Official daisyUI website →](https://daisyui.com/)
@@ -116,7 +124,17 @@ Use tools like the official <a href="https://daisyui.com/theme-generator/">daisy
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/brilyyy/svelisy/blob/main/LICENSE) file for details.
 
+<div align="center">
+  
+༼ つ ◕_◕ ༽つ  Please share  
+  
+[![][tweet]][tweet-url]
+
+</div>
+
 [npm]: https://badgen.net/github/tag/brilyyy/svelisy?label=version&color=green
 [license]: https://badgen.net/github/license/brilyyy/svelisy?color=green
 [npm-url]: https://www.npmjs.com/package/svelisy
 [license-url]: https://github.com/brilyyy/svelisy/blob/main/LICENSE
+[tweet-url]: https://twitter.com/intent/tweet?text=Svelisy%20%0D%0AdaisyUI%20Components%20for%20Svelte%20%0D%0Ahttps://github.com/brilyyy/svelisy
+[tweet]: https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fbrilyyy%2Fsvelisy
