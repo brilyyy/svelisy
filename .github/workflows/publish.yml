@@ -20,30 +20,32 @@ jobs:
           registry-url: https://registry.npmjs.org/
           node-version: 16
 
-      # # Setup pnpm
-      # - uses: pnpm/action-setup@v2
-      #   name: Install pnpm
-      #   id: pnpm-install
-      #   with:
-      #     version: 7
-      #     run_install: false
+      # Setup pnpm
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
 
-      # - name: Get pnpm store directory
-      #   id: pnpm-cache
-      #   shell: bash
-      #   run: |
-      #     echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      # - uses: actions/cache@v3
-      #   name: Setup pnpm cache
-      #   with:
-      #     path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-      #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-pnpm-store-
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-      # - name: Install dependencies
-      #   run: pnpm install
+      - name: Install dependencies
+        run: pnpm install
+      - name: Building package
+        run: pnpm build
 
       # Install dependencies (required by Run tests step)
       #- name: Install dependencies
@@ -97,7 +99,7 @@ jobs:
 
       # Publish version to public repository
       - name: Publish
-        run: cd package && yarn publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
+        run: pnpm publish ./package --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_TOKEN }}
 

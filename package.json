@@ -35,8 +35,7 @@
 		"format": "prettier --plugin-search-dir ./src/lib --write ./src/lib",
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
-		"story:preview": "histoire preview",
-		"publish": "pnpm build && npm publish ./package"
+		"story:preview": "histoire preview"
 	},
 	"devDependencies": {
 		"@histoire/plugin-svelte": "^0.12.4",
