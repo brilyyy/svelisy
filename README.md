@@ -7,10 +7,9 @@
 
 </div>
 
-<div align="center">
 ## is there anyone who can teach me how to make gh actions with automatic versioning?
+
 ## thanks for ur help
-</div>
 
 <div align="center">
   
