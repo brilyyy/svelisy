@@ -8,6 +8,11 @@
 </div>
 
 <div align="center">
+## is there anyone who can teach me how to make gh actions with automatic versioning?
+## thanks for ur help
+</div>
+
+<div align="center">
   
 ༼ つ ◕_◕ ༽つ  Please share  
   
@@ -30,7 +35,7 @@ Import svelisy component to your Svelte Component
 
 ```svelte
 <script lang="ts">
- import { Button } from 'svelisy';
+	import { Button } from 'svelisy';
 </script>
 
 <Button color="primary">Click Here</Button>
@@ -112,12 +117,12 @@ To apply / select theme use SvelisyProvider & ThemeChanger
 
 ```svelte
 <script lang="ts">
- import { SvelisyProvider, SvelisyThemeChanger } from 'svelisy/provider';
+	import { SvelisyProvider, SvelisyThemeChanger } from 'svelisy/provider';
 </script>
 
 <SvelisyProvider>
- <SvelisyThemeChanger />
- <slot />
+	<SvelisyThemeChanger />
+	<slot />
 </SvelisyProvider>
 ```
 
