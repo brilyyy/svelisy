@@ -6,6 +6,7 @@
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '';
+	export let element: $$Props['element'];
 
 	export { className as class };
 
@@ -13,6 +14,7 @@
 </script>
 
 <div
+	bind:this={element}
 	role="navigation"
 	aria-label="Breadcrumbs"
 	{...$$restProps}

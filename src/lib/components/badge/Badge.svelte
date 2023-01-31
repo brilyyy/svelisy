@@ -11,7 +11,7 @@
 		size: $$Props['size'] = undefined,
 		variant: $$Props['variant'] = undefined,
 		responsive: $$Props['responsive'] = false;
-
+	export let element: $$Props['element'];
 	export { className as class };
 
 	$: classes = twMerge(
@@ -26,6 +26,6 @@
 	);
 </script>
 
-<div aria-label="Badge" {...$$restProps} data-theme={dataTheme} class={classes}>
+<div bind:this={element} aria-label="Badge" {...$$restProps} data-theme={dataTheme} class={classes}>
 	<slot />
 </div>

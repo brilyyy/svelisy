@@ -9,7 +9,7 @@ import type { HTMLAttributes } from 'svelte/elements';
 type TRounded = ComponentSize | 'xl' | '2xl' | 'full';
 
 export type TProps = Omit<HTMLAttributes<HTMLDivElement>, 'color'> &
-	IComponentBaseProps & {
+	IComponentBaseProps<HTMLDivElement> & {
 		src?: string;
 		letters?: string;
 		size?: ComponentSize | number;
@@ -23,6 +23,6 @@ export type TProps = Omit<HTMLAttributes<HTMLDivElement>, 'color'> &
 	};
 
 export type TGroupProps = Omit<HTMLAttributes<HTMLDivElement>, 'color'> &
-	IComponentBaseProps & {
+	IComponentBaseProps<HTMLDivElement> & {
 		space?: number;
 	};

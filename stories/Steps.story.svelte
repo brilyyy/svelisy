@@ -2,9 +2,7 @@
 	import type { ComponentStatus, DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Step from './Step.svelte';
-	import Steps from './Steps.svelte';
-	import Stack from './Steps.svelte';
+	import { Steps } from '$lib';
 	export let Hst: Hst;
 
 	type TDataThemeOptions = {
@@ -31,11 +29,11 @@
 >
 	<Hst.Variant title="default">
 		<Steps>
-			<Step color="primary">1</Step>
-			<Step color="primary">2</Step>
-			<Step>3</Step>
-			<Step>4</Step>
-			<Step>5</Step>
+			<Steps.Step color="primary">1</Steps.Step>
+			<Steps.Step color="primary">2</Steps.Step>
+			<Steps.Step>3</Steps.Step>
+			<Steps.Step>4</Steps.Step>
+			<Steps.Step>5</Steps.Step>
 		</Steps>
 
 		<svelte:fragment slot="controls">

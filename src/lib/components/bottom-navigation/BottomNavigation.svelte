@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	export type TBtmNavProps = HTMLAttributes<HTMLDivElement> &
-		IComponentBaseProps & {
+		IComponentBaseProps<HTMLDivElement> & {
 			size?: ComponentSize;
 		};
 </script>
@@ -16,7 +16,7 @@
 	export let className: $$Props['className'] = '';
 	export let dataTheme: $$Props['dataTheme'] = undefined;
 	export let size: $$Props['size'] = undefined;
-
+	export let element: $$Props['element'];
 	export { className as class };
 
 	$: classes = twMerge(
@@ -28,6 +28,6 @@
 	);
 </script>
 
-<div class={classes} data-theme={dataTheme} {...$$restProps}>
+<div bind:this={element} class={classes} data-theme={dataTheme} {...$$restProps}>
 	<slot />
 </div>

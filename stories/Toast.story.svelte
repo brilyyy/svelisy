@@ -3,8 +3,8 @@
 	import type { DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Toast from './Toast.svelte';
-	import type { horizontalOptions, verticalOptions } from './Toast.type';
+	import { Toast } from '$lib';
+	import type { horizontalOptions, verticalOptions } from '$lib/components/toast/Toast.type';
 
 	export let Hst: Hst;
 

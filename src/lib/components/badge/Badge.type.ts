@@ -2,7 +2,7 @@ import type { IComponentBaseProps, ComponentColor, ComponentSize } from '$lib/ty
 import type { HTMLAttributes } from 'svelte/elements';
 
 export type TProps = Omit<HTMLAttributes<HTMLDivElement>, 'color'> &
-	IComponentBaseProps & {
+	IComponentBaseProps<HTMLDivElement> & {
 		variant?: 'outline';
 		size?: ComponentSize;
 		color?: ComponentColor;

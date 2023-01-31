@@ -23,6 +23,6 @@ export type TProps = Omit<HTMLButtonAttributes, 'color'> &
 	};
 
 export type TGroupProps = HTMLAttributes<HTMLDivElement> &
-	IComponentBaseProps & {
+	IComponentBaseProps<HTMLDivElement> & {
 		vertical?: boolean;
 	};

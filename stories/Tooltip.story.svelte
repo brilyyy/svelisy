@@ -2,8 +2,7 @@
 	import type { DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Button from '../button/Button.svelte';
-	import Tooltip from './Tooltip.svelte';
+	import { Tooltip, Button } from '$lib';
 	export let Hst: Hst;
 
 	type TDataThemeOptions = {

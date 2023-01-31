@@ -2,8 +2,7 @@
 	import type { ComponentStatus, DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Toggle from './Toggle.svelte';
-
+	import { Toggle } from '$lib';
 	export let Hst: Hst;
 
 	type TDataThemeOptions = {

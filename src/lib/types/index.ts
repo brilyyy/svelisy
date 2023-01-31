@@ -20,7 +20,8 @@ export type ComponentStatus = (typeof componentStatuses)[number];
 export type ComponentBrandColors = (typeof brandColors)[number];
 export type ComponentBgColors = (typeof bgColors)[number];
 
-export interface IComponentBaseProps {
+export interface IComponentBaseProps<T = Element> {
 	dataTheme?: DataTheme;
 	className?: string;
+	element?: T;
 }

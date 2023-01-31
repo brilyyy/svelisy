@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
-	export type TBottomNavigationLabel = HTMLAttributes<HTMLSpanElement> & IComponentBaseProps;
+	export type TBottomNavigationLabel = HTMLAttributes<HTMLSpanElement> &
+		IComponentBaseProps<HTMLSpanElement>;
 </script>
 
 <script lang="ts">
@@ -10,12 +11,13 @@
 	type $$Props = TBottomNavigationLabel;
 
 	export let className: $$Props['className'] = '';
+	export let element: $$Props['element'];
 
 	export { className as class };
 
 	$: classes = twMerge('btm-nav-label', className);
 </script>
 
-<span class={classes} {...$$restProps}>
+<span bind:this={element} class={classes} {...$$restProps}>
 	<slot />
 </span>

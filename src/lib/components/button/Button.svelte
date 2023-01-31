@@ -21,7 +21,7 @@
 		active: $$Props['active'] = false,
 		disabled: $$Props['disabled'] = false,
 		glass: $$Props['glass'] = false;
-
+	export let element: $$Props['element'];
 	export { className as class };
 
 	$: classes = twMerge(
@@ -58,7 +58,14 @@
 		{/if}
 	</a>
 {:else}
-	<button class={classes} data-theme={dataTheme} {disabled} use:forwardEvents {...$$restProps}>
+	<button
+		bind:this={element}
+		class={classes}
+		data-theme={dataTheme}
+		{disabled}
+		use:forwardEvents
+		{...$$restProps}
+	>
 		{#if $$slots.startIcon}
 			<slot name="startIcon" />
 		{/if}

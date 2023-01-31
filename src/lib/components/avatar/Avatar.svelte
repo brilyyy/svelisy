@@ -18,6 +18,8 @@
 		offline: $$Props['offline'] = undefined,
 		rounded: $$Props['rounded'] = undefined;
 
+	export let element: $$Props['element'];
+
 	export { className as class };
 
 	$: containerClasses = twMerge(
@@ -61,7 +63,13 @@
 	const customImageDimension = typeof size === 'number' ? `width:${size}; height:${size};` : '';
 </script>
 
-<div aria-label="Avatar photo" {...$$restProps} data-theme={dataTheme} class={containerClasses}>
+<div
+	bind:this={element}
+	aria-label="Avatar photo"
+	{...$$restProps}
+	data-theme={dataTheme}
+	class={containerClasses}
+>
 	{#if src}
 		<div class={imgClasses} style={customImageDimension}>
 			<img {src} alt="Avatar" />

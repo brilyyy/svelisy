@@ -8,7 +8,7 @@
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',
 		vertical: $$Props['vertical'] = undefined;
-
+	export let element: $$Props['element'];
 	export { className as class };
 
 	$: classes = twMerge(
@@ -20,6 +20,12 @@
 	);
 </script>
 
-<div aria-label={`Group of buttons`} {...$$restProps} data-theme={dataTheme} class={classes}>
+<div
+	bind:this={element}
+	aria-label={`Group of buttons`}
+	{...$$restProps}
+	data-theme={dataTheme}
+	class={classes}
+>
 	<slot />
 </div>

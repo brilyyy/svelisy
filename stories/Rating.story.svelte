@@ -1,9 +1,8 @@
 <script lang="ts">
-	import type { ComponentStatus, DataTheme } from '$lib/types';
+	import type { DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Rating from './Rating.svelte';
-	import RatingItem from './RatingItem.svelte';
+	import { Rating } from '$lib';
 
 	export let Hst: Hst;
 
@@ -28,16 +27,16 @@
 	<Hst.Variant title="text">
 		<div class="p-5">
 			<Rating size="md" hidden bind:value={ratingValue}>
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" checked />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
-				<RatingItem name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-1" />
+				<Rating.Item name="rating-10" class="bg-green-500 mask mask-star-2 mask-half-2" />
 			</Rating>
 		</div>
 

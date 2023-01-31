@@ -1,5 +1,4 @@
-import Artboard__SvelteComponent_ from './Artboard.svelte';
-import type { TProps } from './Artboard.type';
+import Artboard__SvelteComponent_, { type TArtboardProps } from './Artboard.svelte';
 
-export type ArtboardProps = TProps;
+export type ArtboardProps = TArtboardProps;
 export default Artboard__SvelteComponent_;

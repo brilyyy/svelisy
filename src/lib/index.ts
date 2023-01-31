@@ -1,4 +1,5 @@
 export { default as Alert } from './components/alert';
+export { default as Toggle } from './components/toggle';
 export { default as Button } from './components/button';
 export { default as Avatar } from './components/avatar';
 export { default as Badge } from './components/badge';
@@ -38,3 +39,4 @@ export { default as Carousel } from './components/carousel';
 export { default as Navbar } from './components/navbar';
 export { default as InputGroup } from './components/input-group';
 export { default as BottomNavigation } from './components/bottom-navigation';
+export { default as Steps } from './components/steps';

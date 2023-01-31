@@ -1,5 +1,4 @@
-import Alert__SvelteComponent_ from './Alert.svelte';
-import type { TProps } from './Alert.type';
+import Alert__SvelteComponent_, { type TAlertProps } from './Alert.svelte';
 
-export type AlertProps = TProps;
+export type AlertProps = TAlertProps;
 export default Alert__SvelteComponent_;

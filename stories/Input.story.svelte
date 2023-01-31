@@ -2,13 +2,7 @@
 	import type { ComponentStatus, DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Input from './Input.svelte';
-	import FileInput from './FileInput.svelte';
-	import Checkbox from './Checkbox.svelte';
-	import Radio from './Radio.svelte';
-	import Range from './Range.svelte';
-	import Select from './Select.svelte';
-	import Textarea from './Textarea.svelte';
+	import { Input } from '$lib';
 
 	export let Hst: Hst;
 
@@ -39,7 +33,6 @@
 	let ratingValue = 1;
 
 	let checkboxOptions = ['opt-1', 'opt-2', 'opt-3'];
-	$: rating = ratingValue;
 </script>
 
 <Hst.Story group="components">
@@ -62,26 +55,26 @@
 	</Hst.Variant>
 
 	<Hst.Variant title="file">
-		<FileInput class="mb-3" bind:value={file} />
+		<Input.File class="mb-3" bind:value={file} />
 
 		<p>Input value: {file}</p>
 	</Hst.Variant>
 
 	<Hst.Variant title="multiple files">
-		<FileInput class="mb-3" multiple bind:files />
+		<Input.File class="mb-3" multiple bind:files />
 
 		<p>Input value: {files}</p>
 	</Hst.Variant>
 
 	<Hst.Variant title="checkbox">
-		<Checkbox color="error" indeterminate />
+		<Input.Checkbox color="error" indeterminate />
 
 		<p>Input value: {check.toString()}</p>
 	</Hst.Variant>
 
 	<Hst.Variant title="checkbox group">
 		{#each checkboxOptions as item}
-			<Checkbox color="primary" bind:group={checkboxSelected} value={item} /> {item} <br />
+			<Input.Checkbox color="primary" bind:group={checkboxSelected} value={item} /> {item} <br />
 		{/each}
 
 		<p>Input value: {checkboxSelected && checkboxSelected.join(', ')}</p>
@@ -89,26 +82,27 @@
 
 	<Hst.Variant title="radio">
 		{#each checkboxOptions as item}
-			<Radio color="primary" bind:group={radioGroup} value={item} name="radio-test" /> {item} <br />
+			<Input.Radio color="primary" bind:group={radioGroup} value={item} name="radio-test" />
+			{item} <br />
 		{/each}
 
 		<p>Input value: {radioGroup}</p>
 	</Hst.Variant>
 
 	<Hst.Variant title="range">
-		<Range min="0" max="100" bind:value={rangeValue} />
+		<Input.Range min="0" max="100" bind:value={rangeValue} />
 
 		<p>Input value: {rangeValue}</p>
 	</Hst.Variant>
 
 	<Hst.Variant title="range with step">
-		<Range min="0" max="100" step={25} bind:value={rangeValue} />
+		<Input.Range min="0" max="100" step={25} bind:value={rangeValue} />
 
 		<p>Input value: {rangeValue}</p>
 	</Hst.Variant>
 
 	<Hst.Variant title="select">
-		<Select {dataTheme} bind:value={selectedItem} options={dataThemeOptions} />
+		<Input.Select {dataTheme} bind:value={selectedItem} options={dataThemeOptions} />
 
 		<!-- <Textarea bind:value={textAreaValue} /> -->
 
@@ -118,7 +112,7 @@
 	<Hst.Variant title="text area">
 		<!-- <Select {dataTheme} bind:value={selectedItem} options={dataThemeOptions} /> -->
 
-		<Textarea bind:value={textAreaValue} />
+		<Input.Textarea bind:value={textAreaValue} />
 
 		<p>Input value: {textAreaValue}</p>
 	</Hst.Variant>

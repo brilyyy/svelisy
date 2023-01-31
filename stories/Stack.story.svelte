@@ -2,7 +2,7 @@
 	import type { ComponentStatus, DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Stack from './Stack.svelte';
+	import { Stack } from '$lib';
 	export let Hst: Hst;
 
 	type TDataThemeOptions = {

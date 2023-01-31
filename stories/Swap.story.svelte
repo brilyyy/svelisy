@@ -2,7 +2,7 @@
 	import type { DataTheme } from '$lib/types';
 	import { DEFAULT_THEMES } from '$lib/types/defaultThemes';
 	import type { Hst } from '@histoire/plugin-svelte';
-	import Swap from './Swap.svelte';
+	import { Swap } from '$lib';
 	export let Hst: Hst;
 
 	type TDataThemeOptions = {

@@ -20,5 +20,5 @@ export default defineConfig({
 		title: 'Svelisy',
 		logoHref: 'https://brilyyy.github.io'
 	},
-	storyMatch: ['src/lib/**/*.story.svelte']
+	storyMatch: ['./stories/**/*.story.svelte', './stories/*.story.svelte']
 });

@@ -6,6 +6,7 @@
 
 	export let className: $$Props['className'] = '';
 	export let space: $$Props['space'] = undefined;
+	export let element: $$Props['element'];
 
 	export { className as class };
 
@@ -13,6 +14,6 @@
 	$: classes = clsx('avatar-group', spacingClass, className);
 </script>
 
-<div class={classes}>
+<div bind:this={element} class={classes}>
 	<slot />
 </div>
