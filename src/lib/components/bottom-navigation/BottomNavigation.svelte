@@ -10,6 +10,8 @@
 	import type { ComponentSize, IComponentBaseProps } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
+	import { createEventForwarder } from '$lib/utils';
+	import { get_current_component } from 'svelte/internal';
 	//
 	type $$Props = TBtmNavProps;
 
@@ -18,7 +20,8 @@
 	export let size: $$Props['size'] = undefined;
 	export let element: $$Props['element'];
 	export { className as class };
-
+	//
+	const forwardEvents = createEventForwarder(get_current_component());
 	$: classes = twMerge(
 		'btm-nav',
 		clsx({
@@ -28,6 +31,6 @@
 	);
 </script>
 
-<div bind:this={element} class={classes} data-theme={dataTheme} {...$$restProps}>
+<div use:forwardEvents bind:this={element} class={classes} data-theme={dataTheme} {...$$restProps}>
 	<slot />
 </div>

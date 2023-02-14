@@ -12,6 +12,8 @@
 
 	import type { IComponentBaseProps, ComponentStatus } from '$lib/types';
 	import type { HTMLAttributes } from 'svelte/elements';
+	import { createEventForwarder } from '$lib/utils';
+	import { get_current_component } from 'svelte/internal';
 	//
 	type $$Props = TAlertProps;
 
@@ -24,6 +26,8 @@
 
 	export { className as class };
 
+	const forwardEvents = createEventForwarder(get_current_component());
+
 	$: classes = twMerge(
 		'alert',
 		className,
@@ -35,7 +39,14 @@
 	$: innerClasses = twMerge('flex-1', innerClassName);
 </script>
 
-<div bind:this={element} role="alert" {...$$restProps} data-theme={dataTheme} class={classes}>
+<div
+	use:forwardEvents
+	bind:this={element}
+	role="alert"
+	{...$$restProps}
+	data-theme={dataTheme}
+	class={classes}
+>
 	<div class={innerClasses}>
 		<slot name="icon" />
 		<slot />

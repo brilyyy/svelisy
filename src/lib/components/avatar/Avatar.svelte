@@ -1,9 +1,35 @@
+<script lang="ts" context="module">
+	type TRounded = ComponentSize | 'xl' | '2xl' | 'full';
+
+	export type TAvatarProps = Omit<HTMLAttributes<HTMLDivElement>, 'color'> &
+		IComponentBaseProps<HTMLDivElement> & {
+			src?: string;
+			letters?: string;
+			size?: ComponentSize | number;
+			shape?: ComponentShape;
+			color?: ComponentColor;
+			border?: boolean;
+			borderColor?: ComponentColor;
+			online?: boolean;
+			offline?: boolean;
+			rounded?: TRounded;
+		};
+</script>
+
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import clsx from 'clsx';
-	import type { TProps as $$AvatarProps } from './Avatar.type';
+	import type {
+		ComponentColor,
+		ComponentShape,
+		ComponentSize,
+		IComponentBaseProps
+	} from '$lib/types';
+	import type { HTMLAttributes } from 'svelte/elements';
+	import { createEventForwarder } from '$lib/utils';
+	import { get_current_component } from 'svelte/internal';
 
-	type $$Props = $$AvatarProps;
+	type $$Props = TAvatarProps;
 
 	export let dataTheme: $$Props['dataTheme'] = undefined,
 		className: $$Props['className'] = '',
@@ -21,6 +47,8 @@
 	export let element: $$Props['element'];
 
 	export { className as class };
+
+	const forwardEvents = createEventForwarder(get_current_component());
 
 	$: containerClasses = twMerge(
 		'avatar',
@@ -47,6 +75,7 @@
 
 	$: placeholderClasses = clsx({
 		'bg-neutral-focus': !color,
+
 		'text-neutral-content': !color,
 		[`bg-${color}`]: color,
 		[`text-${color}-content`]: color,
@@ -65,6 +94,7 @@
 
 <div
 	bind:this={element}
+	use:forwardEvents
 	aria-label="Avatar photo"
 	{...$$restProps}
 	data-theme={dataTheme}
